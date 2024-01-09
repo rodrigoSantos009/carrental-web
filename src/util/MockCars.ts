@@ -9,7 +9,7 @@ import { CarsInfo } from "../types/CarType"
 
   export const mockCars: CarsInfo = [
     {
-      id: "1",
+      id: "0",
       model: "Car Model 1",
       year: 2022,
       doors: 4,
@@ -19,7 +19,7 @@ import { CarsInfo } from "../types/CarType"
       car_image: { url: Image1 },
     },
     {
-      id: "2",
+      id: "1",
       model: "Car Model 2",
       year: 2021,
       doors: 2,
@@ -29,7 +29,7 @@ import { CarsInfo } from "../types/CarType"
       car_image: { url: Image2 },
     },
     {
-      id: "3",
+      id: "2",
       model: "Car Model 3",
       year: 2022,
       doors: 4,
@@ -39,7 +39,7 @@ import { CarsInfo } from "../types/CarType"
       car_image: { url: Image3 },
     },
     {
-      id: "4",
+      id: "3",
       model: "Car Model 4",
       year: 2021,
       doors: 2,
@@ -49,7 +49,7 @@ import { CarsInfo } from "../types/CarType"
       car_image: { url: Image4 },
     },
     {
-      id: "5",
+      id: "4",
       model: "Car Model 4",
       year: 2021,
       doors: 2,

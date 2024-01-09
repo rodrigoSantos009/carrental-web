@@ -4,6 +4,7 @@ import { api } from "../../lib/axios";
 import { BsFillPersonFill } from "react-icons/Bs";
 import { useNavigate } from "react-router-dom";
 import { useRent } from "../../contexts/Rent/Rent";
+import { mockCars } from "../../util/MockCars";
 
 type RentCarType = {
   id: string,
@@ -13,12 +14,10 @@ type RentCarType = {
 
 export function RentCars() {
   const rent = useRent();
-  const [cars, setCars] = useState<CarsInfo>([])
-  const navigate = useNavigate()
+  const [cars, setCars] = useState<CarsInfo>([]);
+  const navigate = useNavigate();
   useEffect(() => {
-    api.get("/cars").then((res) => {
-      setCars(res.data);
-    });
+    setCars(mockCars);
   }, []);
 
   function handleSelect(data: RentCarType) {
@@ -36,7 +35,7 @@ export function RentCars() {
                   <div className="rent-car-car">
                     {car.car_image && (
                       <img
-                        src={`http://localhost:3333/uploads/${car.car_image.url}`}
+                        src={car.car_image.url}
                         alt={car.model}
                         className="image"
                       />

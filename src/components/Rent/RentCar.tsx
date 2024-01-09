@@ -7,6 +7,7 @@ import { CarInfo } from "../../types/CarType";
 import { api } from "../../lib/axios";
 import { useRent } from "../../contexts/Rent/Rent";
 import { TotalValueAndAmountInInstallments } from "./TotalValueAndAmountInInstallments";
+import { mockCars } from "../../util/MockCars";
 
 type ICarId = {
   carId: string;
@@ -28,9 +29,7 @@ export function RentCar() {
   );
   
   useEffect(() => {
-    api.get(`/cars/${carId}`).then((res) => {
-      setCar(res.data);
-    });
+    if (carId) setCar(mockCars[Number(carId)]);
   }, []);
   const navigate = useNavigate();
 
@@ -46,7 +45,7 @@ export function RentCar() {
             <div className="rent-car-car">
               {car?.car_image && (
                 <img
-                  src={`http://localhost:3333/uploads/${car?.car_image.url}`}
+                  src={car?.car_image.url}
                 />
               )}
               <div className="text-center">
